@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Content Start -->
+<div class="container">
+	<br>
+	<div class="row">
+		<div class="col-4 profile_col1">
+			<div profile_img_div>
+				<img class="profile_pic" src="{{ url_for('static', filename='img/been.jpg')}}" alt="profile">
+				</br>
+				<h5 class="profile_username">{{pdetail.usernaams}}</h5>
+			</div>
+		</div>
+		<div class="col-8 profile_col o_approval_s">
+			<table class="table table-borderless">
+				<thead>
+					<!--  <tr>
+				      <th scope="col">Name - </th>
+				      <th scope="col">Course</th>
+				    </tr> -->
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">Name - </th>
+						<td>{{pdetail.usernaams}}</td>
+					</tr>
+					<tr>
+						<th scope="row">Course - </th>
+						<td>{{pdetail.course}}</td>
+					</tr>
+					<tr>
+						<th scope="row">ID - </th>
+						<td colspan="2">{{pdetail.i_d}}</td>
+					</tr>
+					<tr>
+						<th scope="row">Phone no - </th>
+						<td colspan="2">+91 <span>{{pdetail.phone_num}}</span> </td>
+					</tr>
+					<tr>
+						<th scope="row">Email address - </th>
+						<td colspan="2">{{pdetail.e__mail}}</td>
+					</tr>
+					<tr>
+						<th scope="row">Hostel Name - </th>
+						<td colspan="2">{{pdetail.hostel__name}}</td>
+					</tr>
+					<tr>
+						<th scope="row">Room No - </th>
+						<td colspan="2">{{pdetail.room__no}}</td>
+					</tr>
+					<tr>
+						<th scope="row">Address - </th>
+						<td colspan="2">{{pdetail.a_ddress}}</td>
+					</tr>
+					<tr>
+						<th scope="row">Father Phone no - </th>
+						<td colspan="2">+91 <span>{{pdetail.father_phone_no}}</span> </td>
+					</tr>
+					<tr>
+						<th scope="row">Blood Group - </th>
+						<td colspan="2">{{pdetail.blood_group}}</td>
+					</tr>
+					<tr>
+						<th scope="row"> Addhar no - </th>
+						<td colspan="2">{{pdetail.addhar_no}}</td>
+					</tr>
+					<tr>
+						<th scope="row">Alternate Phone no - </th>
+						<td colspan="2">+91 <span>{{pdetail.alternate_phoneno}}</span> </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<!-- Notice Table -->
+	<br>
+
+	<div class="container">
+		<!-- <hr> -->
+		<div class="row-1 ">
+			<div class="row-1 small_notice_board "> <span>
+					<h4><strong>NOTICE </strong></h4>
+				</span> </div>
+			<!-- <hr> -->
+			<br>
+			<ul class="notice_ul">
+				<!-- <br> <br> -->
+				<div class="notice_page container">
+
+					<div class="row">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th scope="col">S.no</th>
+									<th scope="col">Notices</th>
+									<th scope="col">Date</th>
+									<th scope="col">By</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								{% for getnotice in getnotices %}
+								<tr>
+									<td scope="row">{{getnotice.s_no}}</td>
+									<td scope="row">{{getnotice.notice}}</td>
+									<td scope="row">{{getnotice.dat_e}}</td>
+									<td scope="row">{{getnotice.by_who}}</td>
+								</tr>
+								{% endfor %}
+								
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+
+			</ul>
+
+		</div>
+	</div>
+	<!-- <div class="notice_page container">
+				
+				<div class="row"> 
+					<table class="table table-striped">
+						  <thead>
+						    <tr>
+						      <th scope="col">S.no</th>
+						      <th scope="col">Notices</th>
+						      
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <th scope="row">1</th>
+						      <td>Mark</td>
+						   
+						    </tr>
+						    <tr>
+						      <th scope="row">2</th>
+						      <td>Jacob</td>
+						     
+						    </tr>
+						    <tr>
+						      <th scope="row">3</th>
+						      <td>Larry</td>
+						    
+						    </tr>
+						  </tbody>
+						</table>
+				</div>
+
+		</div> -->
+
+	<!-- Notice Table End -->
+
+{% endblock %}

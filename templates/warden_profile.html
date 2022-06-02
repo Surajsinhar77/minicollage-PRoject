@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Orignal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href=" {{ url_for('static',filename='css/style.css') }} ">
+
+    <style>
+        /* my own CSS */
+
+
+        .cheakmark {
+            color: green;
+        }
+
+        .timesmark {
+            color: red;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <!-- <section class="ftco-section"> -->
+
+
+    <!-- NAV BAR START -->
+    <section class="">
+        <!-- <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Website menu #05</h2>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- <div class="container"> -->
+
+        <nav class="navbar navbar-expand-lg  navbar-dark bg-primary" id="ftco-navbar">
+            <div class="container">
+                <a class="navbar-brand" href="/warden_profile"> <i class="fa fa-bed"></i> SAC </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                    aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span> Menu
+                </button>
+                <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav ml-auto mr-md-3">
+                        <!-- <li class="nav-item active"><a href="/" class="nav-link">Home</a></li> -->
+                        <!-- <li class="nav-item"><a href="#" class="nav-link">Hostels</a></li> -->
+                        <li class="nav-item"><a href="/warden_profile/notice" class="nav-link">Notice</a></li>
+                        <li class="nav-item"><a href="/warden_profile" class="nav-link">Wardens</a></li>
+                        <!-- <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li> -->
+                        <li class="dropdown nav-item d-md-flex align-items-center">
+                            <a href="#"
+                                class="dropdown-toggle nav-link d-flex align-items-center justify-content-center icon-cart p-0"
+                                id="dropdown04" data-toggle="dropdown" aria-expanded="false">
+                                <div class="fa_user_pic">
+                                    <i class="fa fa-user "></i>
+                                </div>
+                                <b class="caret"></b>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown04">
+                                <a href="/warden_profile" class="dropdown-item" style="font-size: 1rem;">
+                                    <p style="color:red;">{{username}}</p>
+                                </a>
+                                <a href="#" class="dropdown-item">Action</a>
+                                <a href="#" class="dropdown-item">Another action</a>
+                                <a href="#" class="dropdown-item">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">Separated link</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="/warden_logout" class="dropdown-item">Log out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- END nav -->
+        <!-- </div> -->
+
+    </section>
+    <br>
+    <!-- NAV BAR END -->
+
+
+<!-- Content Start -->
+<div class="container">
+	<br>
+	<div class="row">
+		<div class="col-4 profile_col1">
+			<div profile_img_div>
+				<img class="profile_pic" src="{{url_for('static', filename='img/been.jpg')}}" alt="profile">
+				</br>
+				<h5 class="profile_username">{{username}} </h5>
+			</div>
+		</div>
+		<div class="col-8 profile_col">
+
+			<!-- col-8 warden content -->
+			<!-- col-8 warden content end -->
+			<div class="row o_approval_s">
+
+				<h5 class="header_ofapploval"> <strong> Personal Detail </strong></h5>
+
+				<table class="table table-borderless">
+
+					<tbody>
+						<tr>
+							<th scope="row">Name - </th>
+							<td>rahul Kumar</td>
+						</tr>
+						<tr>
+							<th scope="row">Course - </th>
+							<td>Btech CSE</td>
+						</tr>
+						<tr>
+							<th scope="row">ID - </th>
+							<td colspan="2">KHM2021002</td>
+						</tr>
+						<tr>
+							<th scope="row">Phone no - </th>
+							<td colspan="2">+91 <span>6721363738</span> </td>
+						</tr>
+						<tr>
+							<th scope="row">Email address - </th>
+							<td colspan="2">abcd@gmail.com</td>
+						</tr>
+						<tr>
+							<th scope="row">Hostel Name - </th>
+							<td colspan="2">H5</td>
+						</tr>
+						<tr>
+							<th scope="row">Room No - </th>
+							<td colspan="2">S7</td>
+						</tr>
+						<tr>
+							<th scope="row">Address - </th>
+							<td colspan="2">Delhi purana mandir GM rd near vill chock gali no - 4 house no - 878 </td>
+						</tr>
+						<tr>
+							<th scope="row">Father Phone no - </th>
+							<td colspan="2">+91 <span>6721363738</span> </td>
+						</tr>
+						<tr>
+							<th scope="row">Blood Group - </th>
+							<td colspan="2">B+</td>
+						</tr>
+						<tr>
+							<th scope="row"> Addhar no - </th>
+							<td colspan="2"> 1235 5678 9012 3456 </td>
+						</tr>
+						<tr>
+							<th scope="row">Alternate Phone no - </th>
+							<td colspan="2">+91 <span>6721363738</span> </td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+			<!-- col-8 warden content -->
+
+			<div class="row o_approval_s">
+				<h5 class="header_ofapploval"> <strong> Outing Approval Section </strong></h5>
+
+
+			{% for allhldata in allhldatas %}
+				{% if allhldata.status =='Pending' %}
+				<div class="col-6 approval_card">
+					<div class="card">
+						<div class="card-header">
+							Approval / Pending
+						</div>
+						<div class="card-body">
+							<p class="card-title card_h5">Name - <span> {{allhldata.name}} </span> ID - <span>{{allhldata.student_id}}</span></p>
+							<p class="card-text">Reason &nbsp; <span>{{allhldata.reason}}</span></p>
+							<!-- <a href="#" class="btn btn-primary">Views </a> -->
+
+							
+							<!-- Button trigger modal -->
+								
+								<form action="/warden_profile/approve/{{username}}" method='post'>
+								<!-- Modal -->
+								<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
+									tabindex="" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="staticBackdropLabel"><strong> Outing Approval Section
+													</strong></h5>
+												<button type="button" class="close" data-dismiss="modal"
+													aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<div class="modal-body">
+
+												<h5 class="header_ofapploval"> </h5>
+												<div class="col-12 approval_card">
+													
+													 <div class="card">
+													 	<!-- pr5anjal code -->
+								                            <div class="card-header">
+								                                Approval / Pending
+								                            </div>
+								                            <div class="card-body">
+								                                <table>
+								                                    <tr>
+								                                        <td>Name</td>
+								                                        <td>&nbsp; : &nbsp;</td>
+								                                        <td>{{allhldata.name}}</td>
+								                                    </tr>
+								                                    <tr>
+								                                        <td>ID</td>
+								                                        <td>&nbsp; : &nbsp;</td>
+
+								                                        <td> {{allhldata.student_id}}
+								                                        </td>
+								                                    </tr>
+								                                    <tr>
+								                                        <td>Purpose</td>
+								                                        <td>&nbsp; : &nbsp;</td>
+								                                        <td>{{allhldata.reason}}</td>
+								                                    </tr>
+								                                    <tr>
+								                                        <td>Date</td>
+								                                        <td>&nbsp; : &nbsp;</td>
+								                                        <td> From <b>{{allhldata.date_to_leave}}</b> To <b>{{allhldata.date_to_ariv}}</b></td>
+								                                    </tr>
+								                                    <tr>
+								                                        <td>Time</td>
+								                                        <td>&nbsp; : &nbsp;</td>
+								                                        <td> From <b>{{allhldata.time_to_leave}}</b> To <b>{{allhldata.time_to_ariv}}</b></td>
+								                                    </tr>
+								                                    <tr>
+								                                        <td>Outing Type</td>
+								                                        <td>&nbsp; : &nbsp;</td>
+								                                        <td>{{allhldata.outing_type}}</td>
+								                                    </tr>
+								                                    <tr>
+								                                        <td>Destination</td>
+								                                        <td>&nbsp; : &nbsp;</td>
+								                                        <td>{{allhldata.destination}}</td>
+								                                    </tr>
+								                                    <tr>
+								                                        <td></td>
+								                                        <td>&nbsp;  &nbsp;</td>
+								                                        <td><input type="hidden" name="id" value="{{ allhldata.student_id }}" /></td>
+								                                    </tr>
+								                                    
+								                                </table>
+								                                
+								                                <button class="btn btn-primary" data-bs-target="#exampleModalToggle2"
+								                                    data-bs-toggle="modal "type="submit" name="aprv" value="Approve">Approve</button>
+								                                <a href="#" class="btn btn-primary" type="submit" name="aprv" value="Cancel">Cancel</a>
+								                            </div>
+								                        </div>
+								                        <!-- pranjal code end -->
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary"
+													data-dismiss="modal">Close</button>
+												<!-- <button type="button" class="btn btn-primary">Understood</button> -->
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								
+									<button type="button" class="btn btn-primary" data-toggle="modal"
+										data-target="#staticBackdrop">Views</button>
+									<input type="submit" name="aprv" value="Approve" class="btn btn-primary">
+									<input type="submit" name="aprv" value="Cancel" class="btn btn-primary">
+								</form>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+			{% endfor %}
+
+
+				
+
+			</div>
+
+			<div class="row o_approval_s">
+				<h5 class="header_ofapploval"> <strong> Update Notice </strong></h5>
+				<form action="/warden_profile/notice_submit/{{username}}" method='post'>
+					<div class="form-row">
+
+						<div class="form-group col-md-6">
+							<label for="inputDate">Date</label>
+							<input type="date" class="form-control" name="date" id="inputDate" required>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="inputby">By</label>
+							<input type="text" class="form-control" name="by" id="inputby" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputHeading">Heading</label>
+						<input type="text" class="form-control" name="heading" id="inputHeading" required>
+					</div>
+					<div class="form-group">
+						<label for="inputAddress">Notice</label>
+						<textarea type="text" class="form-control" name="notice" id="inputText" required></textarea>
+						<!-- <input type="textarea" class="form-control" id="inputAddress" placeholder="1234 Main St"> -->
+					</div>
+
+
+					<div class="form-group">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="gridCheck" required>
+							<label class="form-check-label" for="gridCheck">
+								Check me out
+							</label>
+						</div>
+					</div>
+					<button type="submit" style="margin-bottom: 30px;" class="btn btn-primary">Submit</button>
+				</form>
+
+			</div>
+			<!-- <div class="row">
+						
+					</div> -->
+
+
+			<!-- col-8 warden content end -->
+
+		</div>
+	</div>
+</div>
+
+  <!-- Footer part Start-->
+    <br>
+    <footer class="text-center text-light mt-auto" style="background-color: #8d448b;">
+        <!-- Grid container -->
+        <div class="container pt-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                    data-mdb-ripple-color="dark"><i class="fa fa-facebook-f"></i></a>
+
+                <!-- Twitter -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                    data-mdb-ripple-color="dark"><i class="fa fa-twitter"></i></a>
+
+                <!-- Google -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                    data-mdb-ripple-color="dark"><i class="fa fa-google"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                    data-mdb-ripple-color="dark"><i class="fa fa-instagram"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                    data-mdb-ripple-color="dark"><i class="fa fa-linkedin"></i></a>
+                <!-- Github -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                    data-mdb-ripple-color="dark"><i class="fa fa-github"></i></a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-light" href="https://mdbootstrap.com/">HMmy1.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer end -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src=" {{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src=" {{ url_for('static',filename='js/popper.js') }} "></script>
+    <script src=" {{ url_for('static',filename='js/bootstrap.min.js') }} "></script>
+    <script src="{{ url_for('static',filename='js/main.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><br>
+<section>
+	<div class="container" style="width: 50vw">
+		<div class="row">
+
+			<h3>Contact form</h3>
+			<form action='/contactgoto' method='post'>
+
+				{% with messages = get_flashed_messages() %}  
+					{% if messages %}  
+						<!-- {% for message in messages %}   -->
+					    	<p class="error_msg">{{ message }}</p>  
+					 	<!-- {% endfor %}   -->
+					{% endif %}  
+				{% endwith %} 
+				<div class="form-row">
+
+					<div class="form-group col-md-6">
+						<label for="inputPassword4">Full Name</label>
+						<input type="text" class="form-control" name="fullname" id="inputname" required>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="inputEmail4">Email</label>
+						<input type="email" class="form-control" name="email" id="inputEmail4" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputAddress">Message</label>
+					<textarea type="text" class="form-control" id="inputText" name="msg" required></textarea>
+					<!-- <input type="textarea" class="form-control" id="inputAddress" placeholder="1234 Main St"> -->
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="inputCity">City</label>
+						<input type="text" class="form-control" id="inputCity" name="city" required>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="inputphoneno">Phone no</label>
+						<input type="number" class="form-control" id="inputphoneno" name="phoneno" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="gridCheck" required>
+						<label class="form-check-label" for="gridCheck">
+							Check me out
+						</label>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+
+		</div>
+	</div>
+</section>
+
+{% endblock %}

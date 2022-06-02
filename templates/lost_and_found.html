@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Content Start -->
+<br>
+<div class="container">
+	<h4> <strong> List of the Lost and found things </strong> </h4>
+	<br>
+	<div class="row card_row">
+		<div class="col">
+			<div class="card lnfcard">
+				<div class="col-4 lnf_img">
+					<div class="row">
+						<img src="{{ url_for('static', filename='./img/images.png')}}" class="img-fluid rounded-start" alt="...">
+					</div>
+				</div>
+				<div class="col-8">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+							additional content. This content is a little bit longer.</p>
+						<a href="#" class="btn btn-primary">Claim</a>
+						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- card start -->
+	<div class="row card_row">
+		<div class="col">
+			<div class="card lnfcard">
+				<div class="col-4 lnf_img">
+					<div class="row">
+						<img src="{{ url_for('static', filename='./img/download.png')}}" class="img-fluid rounded-start" alt="...">
+					</div>
+				</div>
+				<div class="col-8">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+							additional content. This content is a little bit longer.</p>
+						<a href="#" class="btn btn-primary">Claim</a>
+						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- card end -->
+
+
+	<div class="card">
+	  <div class="card-header">
+	    Did you find somethings?
+	  </div>
+	  <div class="card-body">
+	    <h6 class="card-title">Please upload only image file</h6>
+	    	<form method=post enctype=multipart/form-data>
+	    		<div class="input-group mb-3">
+			      <input type="file" class="form-control" id="inputGroupFile02">
+
+			      <input class="btn btn-primary" type=submit value=Upload>
+		      	</div>
+		    </form>
+	    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+	  </div>
+	</div>
+
+<!-- 
+	<input type="file" class="form-control" id="inputGroupFile02">
+		  	 -->
+		  
+		
+
+</div>
+
+<!-- Content End -->
+
+{% endblock %}

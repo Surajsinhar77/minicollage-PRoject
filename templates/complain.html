@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <br>
+    <div class="container cont" style="width: 50vw;">
+        <h3>Report Complain</h3>
+        <div class="row">
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                <!-- {% for message in messages %} -->
+                                    <p class="error_msg">{{ message }}</p>
+                                <!-- {% endfor %} -->
+                            {% endif %}
+                        {% endwith %}
+            <form action="/submitreport" method='post'>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="Name">Name</label>
+                        <input type="Name" class="form-control" id="inputPassword4" placeholder="Enter Name" name="name" required>
+                    </div>
+                    <div class="form-group col-md-4 offset-md-0">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Enter Email" required>
+                    </div>
+                    <div class="form-group col-md-4 offset-md-0">
+                        <label for="UID">ID</label>
+                        <input type="text" name="id" class="form-control" id="inputEmail4" placeholder="Enter UID" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <label for="inputState">Department</label>
+                        <select id="inputState" class="form-control" name="dept">
+                            <option selected>Choose...</option>
+                            <option name="dept">Hostel</option>
+                            <option name="dept">Mess</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-md-5">
+                        <label for="hostel_name">Hostel Name</label>
+                        <input type="text" class="form-control"  id="inputHostel_name" name="hostel_name" placeholder="Enter name of Hostel"
+                            required>
+                    </div>
+
+                    <div class="form-group col-md-2">
+                        <label for="inputSection">Room No</label>
+                        <input type="text" name="room_no" class="form-control" id="inputRoom_no" placeholder="Enter Your Room No"
+                            required>
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputComplaint">Complain</label>
+                        <textarea type="text" name="cmpl" class="form-control Texting" id="inputComplain" required></textarea>
+                    </div>
+                    <div class="form-group col-md-6 offset-md-0">
+                        <label for="inputSolution">Solution</label>
+                        <textarea type="text" name="sol" class="form-control Texting" id="inputSolution" required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+{%  endblock %}

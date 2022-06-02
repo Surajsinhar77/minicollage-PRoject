@@ -1,0 +1,11 @@
+https://flask.palletsprojects.com/en/2.0.x/quickstart/
+
+
+https://www.digitalocean.com/community/tutorials/how-to-add-authentication-to-your-app-with-flask-login
+
+
+
+https://www.freecodecamp.org/news/how-to-authenticate-users-in-flask/
+
+
+https://flask-login.readthedocs.io/en/latest/

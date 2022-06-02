@@ -1,0 +1,291 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section>
+	<div class="container">
+		<div class="row ">
+			{% with messages = get_flashed_messages() %}  
+				{% if messages %}  
+					{% for message in messages %}  
+					    <p class="error_msg">{{ message }}</p>  
+					 {% endfor %}  
+				{% endif %}  
+			{% endwith %} 
+		</div>
+
+		<div class="row">
+			<div class="mini_of_part1 col-4">
+				<div class="approval_card_index o_approval_s_index">
+					<div class="option_link">
+						<ul>
+							<li class="uperlink"> <a href="/home/notice/{{username}}"> Notice</a> </li>
+							<li> <a href="/complain"> Complain</a> </li>
+							<li> <a href="/menu"> Mess Menu</a> </li>
+							<li> <a href="/hostel_leave"> Hostel Leaves</a> </li>
+							<!-- <li> <a href="/lost_and_found"> Lost and Found</a> </li> -->
+							<li class="bottomlink"> <a href="/fee_detail"> Fee Detail</a> </li>
+						</ul>
+					</div>
+				</div>
+			
+
+				<div class="row ">
+					<div class="col-11">
+
+						
+						{% if lapplication != 'hide' %}
+						{% if  lapplication.student_id.lower() == username.lower() %}
+							<!-- <p>{{lapplication.student_id}}</p>
+							<p>{{username.lower()}}</p> -->
+
+						<div class="card">
+							<div class="card-header">
+								Approval / Pending
+							</div>
+							<div class="card-body">
+								<h5 class="card-title" id="apl">{{lapplication.status}}</h5>
+								<!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+
+
+								<!-- Button trigger modal -->
+								<button type="button" class="btn btn-primary" data-toggle="modal"
+									data-target="#staticBackdrop">Views</button>
+
+								<!-- Modal -->
+								<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
+									tabindex="" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="staticBackdropLabel"><strong> Outing Approval Section
+													</strong></h5>
+												<button type="button" class="close" data-dismiss="modal"
+													aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<div class="modal-body">
+
+												<h5 class="header_ofapploval"> </h5>
+												<div class="col-12 approval_card">
+												
+													 <div class="card">
+													 	<!-- pr5anjal code -->
+								                            <div class="card-header">
+								                                Approval / Pending
+								                            </div>
+								                            <div class="card-body">
+								                                <table>
+								                                    <tr>
+								                                        <td>Name</td>
+								                                        <td>&nbsp; : &nbsp;</td>
+								                                        <td> {{lapplication.name}} </td>
+								                                    </tr>
+								                                    <tr>
+								                                        <td>ID</td>
+								                                        <td>&nbsp; : &nbsp;</td>
+								                                        <td> {{lapplication.student_id}}</td>
+								                                    </tr>
+								                                    <tr>
+								                                        <td>Purpose</td>
+								                                        <td>&nbsp; : &nbsp;</td>
+								                                        <td> {{lapplication.reason}}</td>
+								                                    </tr>
+								                                    <tr>
+								                                        <td>Date</td>
+								                                        <td>&nbsp; : &nbsp;</td>
+								                                        <td> From <b>{{lapplication.date_to_leave}}</b> To <b>{{lapplication.date_to_ariv}}</b></td>
+								                                    </tr>
+								                                    <tr>
+								                                        <td>Time</td>
+								                                        <td>&nbsp; : &nbsp;</td>
+
+								                                        <td> From <b>{{lapplication.time_to_leave}}</b> To <b>{{lapplication.time_to_ariv}}</b></td>
+								                                    </tr>
+								                                    <tr>
+								                                        <td>Outing Type</td>
+								                                        <td>&nbsp; : &nbsp;</td>
+								                                        <td>{{lapplication.outing_type}}</td>
+								                                    </tr>
+								                                    <tr>
+								                                        <td>Status</td>
+								                                        <td>&nbsp; : &nbsp;</td>
+
+								                                      <td id="apl2">{{lapplication.status}}</td>
+								                                    </tr>
+								                                </table>
+								                                <br>
+								                                <button class="btn btn-primary" data-bs-target="#exampleModalToggle2"
+								                                    data-bs-toggle="modal">View gate pass</button>
+								                                <a href="/home/delete/{{username}}" class="btn btn-primary">Delete Outing</a>
+								                            </div>
+								                        </div>
+								                        <!-- pranjal code end -->
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary"
+													data-dismiss="modal">Close</button>
+												<!-- <button type="button" class="btn btn-primary">Understood</button> -->
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Modal part end  -->
+
+								<!-- <a href="#" class="btn btn-primary">Cancel</a> -->
+							</div>
+						</div>
+						{% endif %}
+						{% endif %}
+					</div>
+				</div>
+
+			</div>
+
+			<!-- Attendance Table  Part -->
+
+			<div class="mini_of_part2 col-8">
+				
+				<div class="row o_approval_s">
+
+					<table class="table table_of_at">
+						<thead>
+							<tr>
+								<th scope="col">S.no</th>
+								<th scope="col">Date</th>
+								<th scope="col">Day</th>
+								<th scope="col">Attendence</th>
+								<th scope="col">Remark</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>01-Jan-2022</td>
+								<td>Monday</td>
+								<td>Present</td>
+								<td><i class="fa fa-check cheakmark"></i> </td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>02-Jan-2022</td>
+								<td>Tuesday</td>
+								<td>Absent</td>
+								<td><i class="fa fa-times timesmark"></i> </td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>03-Jan-2022</td>
+								<td>Wednesday</td>
+								<td>Present</td>
+								<td><i class="fa fa-check cheakmark"></i> </td>
+							</tr>
+							<tr>
+								<th scope="row">4</th>
+								<td>04-Jan-2022</td>
+								<td>Thrusday</td>
+								<td>Present</td>
+								<td><i class="fa fa-check cheakmark"></i> </td>
+							</tr>
+							<tr>
+								<th scope="row">5</th>
+								<td>05-Jan-2022</td>
+								<td>Friday</td>
+								<td>Present</td>
+								<td><i class="fa fa-check cheakmark"></i> </td>
+							</tr>
+							<tr>
+								<th scope="row">6</th>
+								<td>06-Jan-2022</td>
+								<td>Saturday</td>
+								<td>Present</td>
+								<td><i class="fa fa-check cheakmark"></i> </td>
+							</tr>
+							<tr>
+								<th scope="row">7</th>
+								<td>07-Jan-2022</td>
+								<td>Sunday</td>
+								<td>Present</td>
+								<td><i class="fa fa-check cheakmark"></i> </td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="row">
+						<div class="atnd_btn">
+							<a href="/home/attendence/{{username}}" class="btn btn-primary">View</a>
+							<a href="#" class="btn btn-primary">Cancel</a>
+						</div>
+					</div>
+
+					<!-- <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+							suffered alteration in some form, by injected humour, or randomised words which don't look
+							even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be
+							sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+							generators on the Internet tend to repeat predefined chunks as necessary, making this the
+							first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined
+							with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
+							The generated Lorem Ipsum is therefore always free from repetition, injected humour, or
+							non-characteristic words etc.
+							There are many variations of passages of Lorem Ipsum available, but the majority have
+							suffered alteration in some form, by injected humour, or randomised words which don't look
+							even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be
+							sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+							generators on the Internet tend to repeat predefined chunks as necessary, making this the
+							first true generator on the Internet.</p>
+					</div> -->
+				</div>
+			</div>
+
+
+			<div class="container">
+				<br><br>
+				<div class="row-1 ">
+					<div class="row-1 small_notice_board "> <span>
+							<h4><strong>NOTICE </strong></h4>
+						</span> </div>
+					<!-- <hr> -->
+					<br>
+					<ul class="notice_ul">
+						<!-- <br> <br> -->
+						<div class="notice_page container">
+
+							<div class="row">
+								<table class="table table-striped">
+								<thead>
+									<tr>
+										<th scope="col">S.no</th>
+										<th scope="col">Notices</th>
+										<th scope="col">Date</th>
+										<th scope="col">By</th>
+
+									</tr>
+								</thead>
+								<tbody>
+									{% for getnotice in getnotices %}
+									<tr>
+										<td scope="row">{{getnotice.s_no}}</td>
+										<td scope="row">{{getnotice.notice}}</td>
+										<td scope="row">{{getnotice.dat_e}}</td>
+										<td scope="row">{{getnotice.by_who}}</td>
+									</tr>
+									{% endfor %}
+									
+								</tbody>
+							</table>
+							</div>
+
+						</div>
+
+					</ul>
+
+				</div>
+			</div>
+		</div>
+
+</section>
+<!-- End content and container -->
+
+{% endblock %}
